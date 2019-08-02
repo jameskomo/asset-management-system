@@ -14,16 +14,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'asset_app/main.css' %}">
 
     {% if title %}
-        <title>Mtaa Watch - {{ title }}</title>
+        <title>Asset Management System- {{ title }}</title>
     {% else %}
-        <title>Mtaa Watch</title>
+        <title>Asset Management System</title>
     {% endif %}
 </head>
 <body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" style="background-image: linear-gradient( 89.1deg,  rgba(55,64,77,1) 0.7%, rgba(66,156,193,1) 88.4% );">
         <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'asset_app-home' %}">Mtaa Watch</a>
+          <a class="navbar-brand mr-4" href="{% url 'asset_app-home' %}">Asset Management System</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -39,7 +39,7 @@
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <div class="dropdown">
                   <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
-                    Search Mtaa
+                    Search Assets
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{%url 'business-search'%}">Business</a>
@@ -72,10 +72,10 @@
         {% if user.is_authenticated %}
         <div class="col-md-4">
           <div class="content-section" stye>
-            <h3>Mtaa Watch</h3>
-            <p class='text-muted'>About your Neighborhood
+            <h3>Asset Management System</h3>
+            <p class='text-muted'>About your Assets
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light"><a href="{% url 'asset_app-home' %}">Mtaa Updates</a></li>
+                <li class="list-group-item list-group-item-light"><a href="{% url 'asset_app-home' %}">Assets Updates</a></li>
                 <li class="list-group-item list-group-item-light"><a href="{% url 'contact-home' %}">Key Contacts</a></li>
                 <li class="list-group-item list-group-item-light"><a href="{% url 'business-home' %}">Business Listing</a></li>
                 <li class="list-group-item list-group-item-light"><a href="{% url 'neighborhood-home' %}">Know your Neighborhoods</a></li>
