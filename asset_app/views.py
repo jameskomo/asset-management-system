@@ -24,7 +24,7 @@ class AssetsListView(ListView):
     model = Assets
     template_name = 'asset_app/home.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'assets'
-    ordering = ['-date_issued']
+    ordering = ['-date_purchased']
 
 
 # Detail Views for Assets
@@ -34,20 +34,20 @@ class AssetsDetailView(DetailView):
 # Create Views for Assets
 class AssetsCreateView(LoginRequiredMixin, CreateView):
     model = Assets
-    fields = ['asset_name', 'asset_serial_No', 'asset_location', 'asset_manufacturer', 'asset_issued', 'date_issued', 'asset_assignee', 'asset_image']
+    fields = ['asset_name', 'asset_serial_No', 'asset_manufacturer', 'asset_issued', 'asset_image']
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.user = self.request.user
         return super().form_valid(form)
 
 # Update Class Views for Assets
 
 class AssetsUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Assets
-    fields = ['asset_name', 'asset_serial_No', 'asset_location', 'asset_manufacturer', 'asset_issued', 'date_issued', 'asset_assignee', 'asset_image']
+    fields = ['asset_name', 'asset_serial_No', 'asset_manufacturer', 'asset_issued', 'asset_image']
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.user = self.request.user
         return super().form_valid(form)
 
     def test_func(self):
