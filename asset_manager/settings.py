@@ -76,8 +76,10 @@ WSGI_APPLICATION = 'asset_manager.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'asset_management',
+        'USER': 'komo',
+        'PASSWORD': 'assetManagement',
     }
 }
 
