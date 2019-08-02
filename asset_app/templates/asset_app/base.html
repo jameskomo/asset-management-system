@@ -23,28 +23,26 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" style="background-image: linear-gradient( 89.1deg,  rgba(55,64,77,1) 0.7%, rgba(66,156,193,1) 88.4% );">
         <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'asset_app-home' %}">Asset Management System</a>
+          <a class="navbar-brand mr-4" href="{% url 'assets_app_home' %}">Asset Management System</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'asset_app-home' %}">Home</a>
+              <a class="nav-item nav-link" href="{% url 'assets_app_home' %}">Home</a>
               <a class="nav-item nav-link" href="{% url 'asset_app-about' %}">About</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-                <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
+                <a class="nav-item nav-link" href="{% url 'assets-create' %}">New Post</a>
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <div class="dropdown">
                   <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: aliceblue;">
                     Search Assets
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{%url 'business-search'%}">Business</a>
-                    <a class="dropdown-item" href="{%url 'neighborhood-search'%}"">Neighborhood</a>
-                    <a class="dropdown-item" href="{%url 'contact-search'%}">Contacts</a>
+                    <a class="dropdown-item" href="{%url 'assetssearch'%}">Assets</a>
                   </div>
                 </div>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
@@ -75,10 +73,7 @@
             <h3>Asset Management System</h3>
             <p class='text-muted'>About your Assets
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light"><a href="{% url 'asset_app-home' %}">Assets Updates</a></li>
-                <li class="list-group-item list-group-item-light"><a href="{% url 'contact-home' %}">Key Contacts</a></li>
-                <li class="list-group-item list-group-item-light"><a href="{% url 'business-home' %}">Business Listing</a></li>
-                <li class="list-group-item list-group-item-light"><a href="{% url 'neighborhood-home' %}">Know your Neighborhoods</a></li>
+                <li class="list-group-item list-group-item-light"><a href="{% url 'assets_app_home' %}">Assets Updates</a></li>
                 <li class="list-group-item list-group-item-light">Announcements</li>
                 <li class="list-group-item list-group-item-light">Calendar of Events</li>
               </ul>

@@ -38,7 +38,7 @@ class Migration(migrations.Migration):
             name='admin',
         ),
         migrations.RemoveField(
-            model_name='post',
+            model_name='assets',
             name='author',
         ),
         migrations.DeleteModel(

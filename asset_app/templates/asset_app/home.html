@@ -1,17 +1,17 @@
 {% extends "asset_app/base.html" %}
 {% block content %}
 {% if user.is_authenticated %}
-    {% for post in posts %}
+    {% for assets in posts %}
         <article class="media content-section">
-          <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+          <img class="rounded-circle article-img" src="{{ assets.author.profile.image.url }}">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="#">{{ post.author }}</a>
-              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+              <a class="mr-2" href="#">{{ assets.author }}</a>
+              <small class="text-muted">{{ assets.date_posted|date:"F d, Y" }}</small>
             </div>
-            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-            <p class="article-content">{{ post.content }}</p>
-            <img class="fluid-image" src="{{ post.post_image.url }}">
+            <h2><a class="article-title" href="{% url 'assets-detail' assets.id %}">{{ assets.title }}</a></h2>
+            <p class="article-content">{{ assets.content }}</p>
+            <img class="fluid-image" src="{{ assets.post_image.url }}">
           </div>
         </article>
         
