@@ -1,0 +1,15 @@
+{% extends 'asset_app/base.html' %}
+
+{% block content %}
+  <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+  {% for business in filter.qs %}
+    <li>{{ business.business_name }} - {{ business.business_location }}</li>
+    <li>Location: {{ business.business_location }}</li>
+    <li>Services: {{ business.business_description }}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}

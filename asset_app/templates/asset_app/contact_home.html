@@ -1,0 +1,19 @@
+{% extends "asset_app/base.html" %}
+{% block content %}
+{% for contact in contacts %}
+    
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <h2><a class="article-title" href="{% url 'contact-detail' contact.id %}">Name: {{ contact.contact_name}}</a></h2>     
+            </div>
+            <img class="img-fluid" src="{{ contact.contact_logo.url }}"><br>
+            <a class="mr-2" href="{% url 'neighborhood-home'%}">Address: {{ contact.contact_address}}</a>  
+            <br>
+            <small class="text-muted">Number: {{ contact.contact_number }}</small>
+            <br>
+            <p class="article-content">Email: {{ contact.contact_email }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
